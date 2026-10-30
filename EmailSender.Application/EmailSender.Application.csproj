@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EmailSender.Domain\EmailSender.Domain.csproj" />
+    <ProjectReference Include="..\EmailSender.Infrastructure\EmailSender.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

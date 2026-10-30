@@ -1,6 +1,6 @@
 ﻿using EmailSender.Domain.Entities;
 
-namespace EmailSender.Application.Abstractions
+namespace EmailSender.Domain.Abstractions
 {
     public interface IEmailSender
     {

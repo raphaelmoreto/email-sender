@@ -1,4 +1,4 @@
-﻿using EmailSender.Application.Abstractions;
+﻿using EmailSender.Domain.Abstractions;
 using EmailSender.Domain.Entities;
 
 // CONJUNTO DE CLASSES NATIVO DO .NET. USADO PARA ENVIAR E-MAILS ATRAVÉS DE UM SERVIDOR SMTP
