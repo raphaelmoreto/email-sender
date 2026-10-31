@@ -1,0 +1,105 @@
+﻿<Window x:Class="EmailSender.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmailSender.Wpf"
+        mc:Ignorable="d"
+        Title="Envio de e-mail" Height="650" MinHeight="580" Width="760" MinWidth="650"
+        WindowStartupLocation="CenterScreen">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="24">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                            Grid.ColumnSpan="2" 
+                            Text="Compor e-mail" 
+                            FontSize="24"
+                            FontWeight="SemiBold"
+                            Margin="0,0,0,20"/>
+
+            <Label Grid.Row="1"
+                        Content="Para:"
+                        VerticalAlignment="Top"/>
+
+            <TextBox Grid.Row="1" 
+                            Grid.Column="1"
+                            Margin="0,4,0,10"
+                            Text="{Binding To, UpdateSourceTrigger=PropertyChanged}"
+                            ToolTip="Separe os endereços por vírgula ou ponto e vírgula"/>
+
+            <Label Grid.Row="2"
+                        Content="Cc:"
+                        VerticalAlignment="Top"/>
+
+            <TextBox Grid.Row="2" 
+                            Grid.Column="1"
+                            Margin="0,4,0,10"
+                            Text="{Binding Cc, UpdateSourceTrigger=PropertyChanged}"
+                            ToolTip="Cópia opcional"/>
+
+            <Label Grid.Row="3"
+                        Content="Cco:"
+                        VerticalAlignment="Top"/>
+
+            <TextBox Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,4,0,10"
+                            Text="{Binding Bcc, UpdateSourceTrigger=PropertyChanged}"
+                            ToolTip="Cópia oculta opcional"/>
+
+            <Label Grid.Row="4"
+                        Content="Assunto:"
+                        VerticalAlignment="Top"/>
+
+            <TextBox Grid.Row="4"
+                            Grid.Column="1"
+                            Margin="0,4,0,10"
+                            Text="{Binding Subject, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Grid.Row="5"
+                        Content="Corpo:"
+                        VerticalAlignment="Top"/>
+
+            <TextBox Grid.Row="5"
+                            Grid.Column="1"
+                            Height="230"
+                            Margin="0,4,0,14"
+                            AcceptsReturn="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto"
+                            VerticalContentAlignment="Top"
+                            Text="{Binding Body, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <StackPanel Grid.Row="6"
+                                Grid.Column="1">
+
+                <Button Content="Enviar e-mail"
+                                Command="{Binding EnviarComando}"
+                                Height="38"
+                                Width="150"
+                                HorizontalAlignment="Left"/>
+
+                <TextBlock Text="{Binding Status}"
+                                Margin="0,12,0,0"
+                                TextWrapping="Wrap"/>
+
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+</Window>
